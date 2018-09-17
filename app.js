@@ -13,12 +13,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sum(a, b) { //eslint-disable-line
   var newSum = a + b;
-  var summary = 'The sum of ' + a + ' and ' + b + ' is 11.';
-  return[newSum, summary];
+  var summary = 'The sum of ' + a + ' and ' + b + ' is ' + newSum + '.';
+  return [newSum, summary];
 }
-
-// var sumArray = sum(4, 7);
-// console.log(sumArray);
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -39,12 +36,10 @@ function multiply(a, b) { //eslint-disable-line
   var summary = 'The product of ' + a + ' and ' + b + ' is ' + newProduct + '.';
   return[newProduct, summary];
 }
-
-var prodArray = multiply(5, 9);
-console.log(prodArray);
-
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
+// Here is the test for multiply(); uncomment it to run it
+// testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -61,8 +56,26 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumElementOfTwo = sum(a, b)[0];
+  var sumElementOfThree = sum(c, sumElementOfTwo)[0];
+
+  console.log(sumElementOfTwo);
+  console.log(sumElementOfThree);
+
+  var productElementOfTwo = multiply(a, b)[0];
+  var productElementOfThree = multiply(c, productElementOfTwo)[0];
+
+  console.log(productElementOfTwo);
+  console.log(productElementOfThree);
+
+  var sumElementArray = a + ' and ' + b + ' and ' + c + ' sum to ' + sumElementOfTwo + sumElementOfThree + '.';
+  var productElementArray = 'The product of ' + a + ' and ' + ' and ' + c + ' is ' + productElementOfTwo + productElementOfThree + '.';
+
+  return [sumElementOfThree, productElementOfThree,sumElementArray,productElementArray];
 
 }
+
+sumAndMultiply(4, 7, 5);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
